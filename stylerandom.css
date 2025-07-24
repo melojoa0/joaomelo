@@ -115,7 +115,9 @@ body {
 
 
 @media (max-width: 640px) {
-  
+   .trash {
+  display: none;
+ }
   .topnav {
     position: fixed;
     top: 0;
@@ -145,12 +147,16 @@ body {
     grid-row: 1 / 2;
   }
 
-  .topnav a {
-  
-    margin: 0;
+
+      .cursor-link {
+    display: none !important;
   }
-
-
+  .back {
+    display: none;
+  }
+  .next {
+    display: none;
+  }
 
 }
 
@@ -206,21 +212,6 @@ color: #090909;
 
 
 
-
-
-
-@media (max-width: 768px) {
-  .cursor-link {
-    display: none !important;
-  }
-  .back {
-    display: none;
-  }
-  .next {
-    display: none;
-  }
-
-}
 
  
 

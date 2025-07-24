@@ -111,7 +111,9 @@ body {
 
 
 @media (max-width: 640px) {
-  
+   .trash {
+  display: none;
+ }
   .topnav {
     position: fixed;
     top: 0;

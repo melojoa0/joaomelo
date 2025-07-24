@@ -473,6 +473,10 @@ body {
     margin: 0;
   }
 
+
+ .trash {
+  display: none;
+ }
 /* titulo */
 
 
