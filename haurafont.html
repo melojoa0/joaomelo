@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>João Melo</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="stylehaura.css">
+</head>
+<body>
+
+
+
+
+
+<div id="custom-cursor"></div>
+
+
+
+
+
+
+<div class="topnav">
+  <div class="nav-left">
+    <a class="active" href="Index.html">JOÃO MELO</a>
+    <a href="Index.html#projects">PROJECTS</a>
+    <a href="random.html">RANDOM TRASH</a>
+  </div>
+  <div class="topnav-right">
+    <a href="contactpage.html">CONTACT</a>
+  </div>
+</div>
+
+
+
+ <div class="centered-content">
+
+
+    <p class="back"> <a href="Index.html#projects"> back</a> </p>
+
+    <p class="next"> <a href="ribeira.html">next project</a></p>
+
+
+<img src="img/haura1.jpg" alt="">
+
+<img src="img/haura2.jpg" alt="">
+
+<img src="img/hauragif.gif" alt="">
+
+<img src="img/haura4.jpg" alt="">
+
+<img src="img/haura5.jpg" alt="">
+
+<p class="downloadtext"> <a href="https://joaomel0.gumroad.com/l/haurasans">&uarr; DOWNLOAD AT GUMROAD</a></p>
+
+
+
+</div>
+
+
+
+
+
+<script>
+ 
+const cursor = document.getElementById("custom-cursor");
+
+// Move cursor with mouse
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+// Add hover effect on all links
+const links = document.querySelectorAll("a");
+
+links.forEach(link => {
+  link.addEventListener("mouseenter", () => {
+    cursor.classList.add("big");
+  });
+
+  link.addEventListener("mouseleave", () => {
+    cursor.classList.remove("big");
+  });
+});
+
+
+  
+</script>
+
+</body>
+</html>
+
+  

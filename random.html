@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>João Melo</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="stylerandom.css">
+</head>
+<body>
+
+
+
+
+
+
+    <div id="custom-cursor"></div>
+
+
+
+
+
+
+<div class="topnav">
+  
+  <div class="nav-left">
+
+    <a class="active" href="Index.html">JOÃO MELO</a>
+    <a href="Index.html#projects">PROJECTS</a>
+    <a href="random.html">RANDOM TRASH</a>
+    
+  </div>
+  <div class="topnav-right">
+  
+    <a href="#contact">CONTACT</a>
+  </div>
+  
+</div>
+
+
+
+<div class="all">
+  
+  <div class="draggable"><img src="randomworks/lamp.png"></div>
+
+  <div class="draggable"><video src="randomworks/3dballs.mp4" autoplay loop muted></video></div>
+
+   <div class="draggable"><video src="randomworks/book.mp4" autoplay loop muted></video></div>
+
+ <div class="draggable"><video src="randomworks/pattern1.mp4" autoplay loop muted></video></div>
+
+ <div class="draggable"><video src="randomworks/pattern2.mp4" autoplay loop muted></video></div>
+
+ <div class="draggable"><video src="randomworks/pattern3.mp4" autoplay loop muted></video></div>
+
+ <div class="draggable"><video src="randomworks/motion1.mp4" autoplay loop muted></video></div>
+
+  <div class="draggable"><img src="randomworks/info.jpg"></div>
+
+   <div class="draggable"><video src="randomworks/eye.mp4" autoplay loop muted></video></div>
+
+    <div class="draggable"><video src="randomworks/fastball.mp4" autoplay loop muted></video></div>
+
+</div>
+
+  
+<script>
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.onload = () => {
+  window.scrollTo(0, 0);
+
+  // your draggable init code here...
+};
+
+
+const cursor = document.getElementById("custom-cursor");
+
+// Move cursor with mouse
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+// Add hover effect on all links
+const links = document.querySelectorAll("a");
+
+links.forEach(link => {
+  link.addEventListener("mouseenter", () => {
+    cursor.classList.add("big");
+  });
+
+  link.addEventListener("mouseleave", () => {
+    cursor.classList.remove("big");
+  });
+});
+
+
+
+
+
+
+
+
+
+  // Select all elements with class 'draggable'
+
+ 
+ document.addEventListener('DOMContentLoaded', () => {
+  const draggables = document.querySelectorAll('.draggable');
+  const placedRects = [];
+
+  draggables.forEach(el => {
+    document.body.appendChild(el);
+
+    const width = el.offsetWidth;
+    const height = el.offsetHeight;
+
+    const { x, y } = getRandomPositionAvoidingOverlap(placedRects, width, height);
+    el.style.left = x + 'px';
+    el.style.top = y + 'px';
+
+    placedRects.push({ x, y, width, height });
+
+    makeDraggable(el);
+  });
+
+  function getRandomPositionAvoidingOverlap(placedRects, width, height) {
+    const padding = 1;
+    const maxAttempts = 100;
+    const vw = window.innerWidth;
+    const verticalLimit = 2000;
+
+    let attempt = 0;
+
+    while (attempt < maxAttempts) {
+      const x = Math.random() * (vw - width - padding);
+      const y = Math.random() * (verticalLimit - height - padding);
+      const newRect = { x, y, width, height };
+
+      const overlapping = placedRects.some(rect => {
+        return !(
+          rect.x + rect.width + padding < newRect.x ||
+          newRect.x + newRect.width + padding < rect.x ||
+          rect.y + rect.height + padding < newRect.y ||
+          newRect.y + newRect.height + padding < rect.y
+        );
+      });
+
+      if (!overlapping) return newRect;
+      attempt++;
+    }
+
+    return {
+      x: Math.random() * (vw - width),
+      y: Math.random() * (verticalLimit - height)
+    };
+  }
+
+  function makeDraggable(el) {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    el.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      el.style.cursor = 'grabbing';
+      offsetX = e.pageX - el.offsetLeft;
+      offsetY = e.pageY - el.offsetTop;
+      e.preventDefault();
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (isDragging) {
+        isDragging = false;
+        el.style.cursor = 'grab';
+      }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      moveElement(el, e.pageX, e.pageY);
+    });
+
+    el.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      const touch = e.touches[0];
+      offsetX = touch.pageX - el.offsetLeft;
+      offsetY = touch.pageY - el.offsetTop;
+    });
+
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const touch = e.touches[0];
+      moveElement(el, touch.pageX, touch.pageY);
+    });
+
+    function moveElement(el, pageX, pageY) {
+      const maxX = window.innerWidth - el.offsetWidth;
+      const maxY = 3000 - el.offsetHeight;
+
+      let newX = pageX - offsetX;
+      let newY = pageY - offsetY;
+
+      if (newX < 0) newX = 0;
+      if (newY < 0) newY = 0;
+      if (newX > maxX) newX = maxX;
+      if (newY > maxY) newY = maxY;
+
+      el.style.left = newX + 'px';
+      el.style.top = newY + 'px';
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+  

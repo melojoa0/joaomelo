@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>João Melo</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="stylebarcelos.css">
+
+</head>
+
+<body>
+
+  
+
+<div id="custom-cursor"></div>
+
+<div class="topnav">
+  <div class="nav-left">
+    <a class="active" href="Index.html">JOÃO MELO</a>
+    <a href="Index.html#projects">PROJECTS</a>
+    <a href="random.html">RANDOM TRASH</a>
+  </div>
+  <div class="topnav-right">
+    <a href="contactpage.html">CONTACT</a>
+  </div>
+</div>
+
+
+
+
+ <div class="centered-content">
+
+  <p class="back"> <a href="Index.html#projects"> back</a> </p>
+
+    <p class="next"> <a href="bannermockup.html">next project</a></p>
+
+<video autoplay muted loop playsinline>
+  <source src="videos/barcelos_logoscolors.mp4"  type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+  <video autoplay muted loop playsinline>
+  <source src="videos/barcelos_logosexplain.mp4 "  type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+  <video autoplay muted loop playsinline>
+  <source src="videos/barcelos_explain.mp4 "  type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p class="text_explain">Barcelos é uma cidade situada no norte de Portugal, conhecida por sua rica história, tradições culturais e beleza natural. Famosa pelo Galo de Barcelos, um símbolo nacional, a cidade combina harmoniosamente seu património histórico com o charme local.
+<br> Barcelos, a city in northern Portugal, is renowned for its rich history, vibrant cultural traditions, and stunning natural beauty. Famous for the Rooster of Barcelos, a cherished national
+symbol, the city beautifully combines historical heritage with local charm.</p>
+
+
+<img src="img/Barcelos.jpg" alt="">
+
+<img src="img/Barcelos4.png" alt="">
+
+
+<img src="img/Barcelos5.png" alt="">
+
+
+
+<video autoplay muted loop playsinline>
+  <source src="videos/barcelos_book.mp4 "  type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+<img src="img/Barcelos6.png" alt="">
+
+
+</div>
+
+
+
+
+
+
+<script>
+ 
+const cursor = document.getElementById("custom-cursor");
+
+// Move cursor with mouse
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+// Add hover effect on all links
+const links = document.querySelectorAll("a");
+
+links.forEach(link => {
+  link.addEventListener("mouseenter", () => {
+    cursor.classList.add("big");
+  });
+
+  link.addEventListener("mouseleave", () => {
+    cursor.classList.remove("big");
+  });
+});
+
+
+  
+</script>
+
+</body>
+</html>
+
+  
