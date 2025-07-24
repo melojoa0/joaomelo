@@ -552,4 +552,19 @@ body {
     }
 }
 
+/* Fixes for touch devices */
+
+@media (hover: none) and (pointer: coarse) {
+  #custom-cursor {
+    display: none !important;
+  }
+
+  * {
+    cursor: default !important;
+  }
+
+  .project-list a::after {
+    display: none !important;
+  }
+}
 
