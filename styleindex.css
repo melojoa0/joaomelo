@@ -33,8 +33,7 @@ body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
-      transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
   transform: translate(-50%, -50%);
 }
 
@@ -567,8 +566,6 @@ body {
     cursor: default !important;
   }
 
-  .project-list a::after {
-    display: none !important;
-  }
+
 }
 
